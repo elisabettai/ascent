@@ -58,7 +58,7 @@ def run(args):
                 print('Overwriting.\n')
 
         if retrieve:
-            print(f'Downloading {jar} to {target}')
+            print(f'Downloading {jar} to {target}***************************')
             if sys.platform.startswith('darwin') or sys.platform.startswith('linux'):
                 print(f'Downloading with curl....')
                 subprocess.run(['curl', '-o', target, jar])

@@ -60,7 +60,9 @@ def run(args):
         if retrieve:
             print(f'Downloading {jar} to {target}')
             if sys.platform.startswith('darwin') or sys.platform.startswith('linux'):
+                print(f'Downloading with curl....')
                 subprocess.run(['curl', '-o', target, jar])
+                print(f'Downloading with curl successful')
             else:
                 with subprocess.Popen("powershell.exe", stdin=subprocess.PIPE) as p:
                     p.stdin.write(

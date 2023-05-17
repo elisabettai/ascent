@@ -69,6 +69,7 @@ def run(args):
                     p.stdin.write(f'$source = \'{jar}\'\n'.encode())
                     p.stdin.write(f'$destination = \'{os.path.abspath(target)}\'\n'.encode())
                     p.stdin.write('curl $source -OutFile $destination'.encode())
+            print(f'Successfully downloaded {jar}')
 
     # run system-specific installation
     if args.no_conda:

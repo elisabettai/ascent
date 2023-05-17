@@ -62,7 +62,6 @@ def run(args):
             if sys.platform.startswith('darwin') or sys.platform.startswith('linux'):
                 print(f'Downloading with curl....')
                 subprocess.run(['curl', '-o', target, jar])
-                print(f'Downloading with curl successful')
             else:
                 with subprocess.Popen("powershell.exe", stdin=subprocess.PIPE) as p:
                     p.stdin.write(
@@ -71,7 +70,6 @@ def run(args):
                     p.stdin.write(f'$source = \'{jar}\'\n'.encode())
                     p.stdin.write(f'$destination = \'{os.path.abspath(target)}\'\n'.encode())
                     p.stdin.write('curl $source -OutFile $destination'.encode())
-            print(f'Successfully downloaded {jar}')
 
     # run system-specific installation
     if args.no_conda:

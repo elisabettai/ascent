@@ -1,8 +1,10 @@
 #! /bin/bash
 set -e
+echo "Inside install.sh"
 conda init
 CONDA_ENVPY=$(conda info --base)/envs/ascent/bin/python
 CONDA_BASE=$(conda info --base)/etc/profile.d/conda.sh
+echo "Before source CONDA_BASE"
 source $CONDA_BASE
 conda create -n ascent
 eval "$(conda shell.bash hook)"
